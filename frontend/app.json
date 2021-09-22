@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "frontend",
+    "slug": "frontend",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyBjLV40QZe638O2rOXWcdlxpvMQ69Aw8hE",
+          "authDomain": "little-bands-react-native.firebaseapp.com",
+          "databaseURL": "https://little-bands-react-native-default-rtdb.firebaseio.com",
+          "projectId": "little-bands-react-native",
+          "storageBucket": "little-bands-react-native.appspot.com",
+          "messagingSenderId": "150215062508",
+          "appId": "1:150215062508:web:368759d6726f09a9fd06c9",
+          "measurementId": "G-G7BZJ30G4L"
+        }
+      }
+    }
+  }
+}
