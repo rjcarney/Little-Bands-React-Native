@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import { Feather } from '@expo/vector-icons';
+import LessonScreen from '../../screens/lesson';
 
 const Tab = createMaterialBottomTabNavigator()
 
@@ -16,7 +17,7 @@ export default function HomeScreen() {
             initialRouteName="feed">
             <Tab.Screen
                 name="lessons"
-                component={EmptyScreen}
+                component={LessonScreen}
                 options={{
                     tabBarIcon: ({color}) => (
                         <Feather name="music" size={24} color={color} />
