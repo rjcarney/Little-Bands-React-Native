@@ -15,20 +15,20 @@ export default function HomeScreen() {
             barStyle={{ backgroundColor: 'black' }}
             initialRouteName="feed">
             <Tab.Screen
-                name="feed"
+                name="lessons"
                 component={EmptyScreen}
                 options={{
                     tabBarIcon: ({color}) => (
-                        <Feather name="home" size={24} color={color} />
+                        <Feather name="music" size={24} color={color} />
                     )
                 }}
             />
             <Tab.Screen
-                name="practice"
+                name="free play"
                 component={EmptyScreen}
                 options={{
                     tabBarIcon: ({color}) => (
-                        <Feather name="search" size={24} color={color} />
+                        <Feather name="play" size={24} color={color} />
                     )
                 }}
             />
