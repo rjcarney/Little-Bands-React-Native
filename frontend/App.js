@@ -1,33 +1,27 @@
 import React from 'react';
 import  * as firebase from 'firebase';
-import { StyleSheet, Text, View } from 'react-native';
-
-import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './src/redux/reducers';
 import thunk from 'redux-thunk';
-const store = createStore(rootReducer, applyMiddleware(thunk));
 
+import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
 import Constants from 'expo-constants';
 import AuthScreen from './src/screens/auth';
+import Route from './src/navigation/main';
 
-if(firebase.apps.length === 0) {
-  firebase.initializeApp(Constants.manifest.web.config.firebase);
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(Constants.manifest.web.config.firebase)
+} else {
+  firebase.app()
 }
 
 export default function App() {
   return (
     <Provider store={store}>
-      <AuthScreen />
+      <Route />
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
