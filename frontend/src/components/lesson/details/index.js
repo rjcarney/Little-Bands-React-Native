@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
 import { Feather } from '@expo/vector-icons';
 
@@ -16,7 +16,9 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                 <Text style={styles.headerText}>Lochness</Text>
 
                 <View style={styles.lessonInfo}>
-                    <View style={styles.albumArt}></View>
+                    <View style={styles.albumArt}>
+                        
+                    </View>
                     <View style={styles.lessonInfoText}>
                         <Text>Little Bands</Text>
                         <Text>1:30</Text>
@@ -31,7 +33,10 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                                     console.log('instrument already selected')
                                 }}
                     >
-                        <Text>guitar</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/guitar.png')}
+                        ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
                         onPress={() => {instrument == '' ?
@@ -40,7 +45,10 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                                     console.log('instrument already selected')
                                 }}
                     >
-                        <Text>bass</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/bass.png')}
+                        ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
                         onPress={() => {instrument == '' ?
@@ -49,7 +57,10 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                                     console.log('instrument already selected')
                                 }}
                     >
-                        <Text>piano</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/keyboard.png')}
+                        ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
                         onPress={() => {instrument == '' ?
@@ -58,7 +69,10 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                                     console.log('instrument already selected')
                                 }}
                     >
-                        <Text>drums</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/drums.png')}
+                        ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
                         onPress={() => {instrument == '' ?
@@ -67,13 +81,19 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                                     console.log('instrument already selected')
                                 }}
                     >
-                        <Text>vocals</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/microphone.png')}
+                        ></Image>
                     </TouchableOpacity>
                     {instrument != '' ?
                         <TouchableOpacity style={styles.instrumentBtn}
                                 onPress={() => setInstrument('')}
                         >
-                            <Text>remove</Text>
+                            <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/delete.png')}
+                        ></Image>
                         </TouchableOpacity>
                         :
                         null
@@ -85,13 +105,22 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                         <Text style={styles.recordingHeaderText}>{instrument}</Text>
                         <View style={styles.buttonRow}>
                         <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>video</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/video.png')}
+                        ></Image>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>sheet music</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/sheetmusic.png')}
+                        ></Image>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>metronome</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/metronome.png')}
+                        ></Image>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.instrumentBtn}>
                             <Text>playback speed</Text>
@@ -103,13 +132,22 @@ export default function LessonDetails({ setLessonDetailsPage }) {
 
                         <View style={styles.buttonRow}>
                         <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>Play</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/play.png')}
+                        ></Image>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>Record</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/record.png')}
+                        ></Image>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>Delete</Text>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/undo.png')}
+                        ></Image>
                         </TouchableOpacity>
                         </View>
                     </View>

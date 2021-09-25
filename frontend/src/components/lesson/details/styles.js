@@ -41,7 +41,10 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     instrumentBtn: {
-        backgroundColor: 'darkgray',
+        height: 50,
+        width: 50
+    },
+    instrumentBtnImage: {
         height: 50,
         width: 50
     },
