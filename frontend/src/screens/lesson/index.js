@@ -5,15 +5,19 @@ import LessonMenu from '../../components/lesson/menu';
 import styles from './styles';
 
 export default function LessonScreen() {
-    const [lessonPage, setLessonPage] = useState(0);
-    const [lessonDetailsPage, setLessonDetailsPage] = useState(false);
+    const [lesson, setLesson] = useState({
+        set: false,
+        title: '',
+        artist: '',
+        duration: '',
+    });
 
     return (
         <View style={styles.container}>
-            {lessonDetailsPage ? 
-                <LessonDetails setLessonDetailsPage={setLessonDetailsPage} />
+            {lesson.set ?
+                <LessonDetails lesson={lesson} setLesson={setLesson} />
                 :
-                <LessonMenu lessonPage={lessonPage} setLessonPage={setLessonPage} lessonDetailsPage={lessonDetailsPage} setLessonDetailsPage={setLessonDetailsPage} />
+                <LessonMenu setLesson={setLesson} />
             }
         </View>
     )

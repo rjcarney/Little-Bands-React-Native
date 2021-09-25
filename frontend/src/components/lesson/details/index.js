@@ -1,27 +1,34 @@
-import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
-import styles from './styles'
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import styles from './styles';
 import { Feather } from '@expo/vector-icons';
 
-export default function LessonDetails({ setLessonDetailsPage }) {
+export default function LessonDetails({ lesson, setLesson }) {
     const [instrument, setInstrument] = useState('');
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => setLessonDetailsPage(false)}>
+            <TouchableOpacity 
+                onPress={() => setLesson({
+                    set: false,
+                    title: '',
+                    artist: '',
+                    duration: '',
+                    })
+                }
+            >
                 <Feather name="arrow-left" size={24} color="black" />
             </TouchableOpacity>
 
             <View style={styles.lessonContainer}>
-                <Text style={styles.headerText}>Lochness</Text>
-
+                <Text style={styles.headerText}>{lesson.title}</Text>
                 <View style={styles.lessonInfo}>
                     <View style={styles.albumArt}>
                         
                     </View>
                     <View style={styles.lessonInfoText}>
-                        <Text>Little Bands</Text>
-                        <Text>1:30</Text>
+                        <Text>{lesson.artist}</Text>
+                        <Text>{lesson.duration}</Text>
                     </View>
                 </View>
 
@@ -30,7 +37,7 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                         onPress={() => {instrument == '' ?
                                     setInstrument('Guitar')
                                     :
-                                    console.log('instrument already selected')
+                                    null
                                 }}
                     >
                         <Image
@@ -42,7 +49,7 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                         onPress={() => {instrument == '' ?
                                     setInstrument('Bass')
                                     :
-                                    console.log('instrument already selected')
+                                    null
                                 }}
                     >
                         <Image
@@ -54,7 +61,7 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                         onPress={() => {instrument == '' ?
                                     setInstrument('Piano')
                                     :
-                                    console.log('instrument already selected')
+                                    null
                                 }}
                     >
                         <Image
@@ -66,7 +73,7 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                         onPress={() => {instrument == '' ?
                                     setInstrument('Drums')
                                     :
-                                    console.log('instrument already selected')
+                                    null
                                 }}
                     >
                         <Image
@@ -78,7 +85,7 @@ export default function LessonDetails({ setLessonDetailsPage }) {
                         onPress={() => {instrument == '' ?
                                     setInstrument('Vocals')
                                     :
-                                    console.log('instrument already selected')
+                                    null
                                 }}
                     >
                         <Image
