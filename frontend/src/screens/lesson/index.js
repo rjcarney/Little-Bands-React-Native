@@ -11,7 +11,7 @@ export default function LessonScreen() {
     return (
         <View style={styles.container}>
             {lessonDetailsPage ? 
-                <LessonDetails lessonPage={lessonPage} setLessonDetailsPage={setLessonDetailsPage} />
+                <LessonDetails setLessonDetailsPage={setLessonDetailsPage} />
                 :
                 <LessonMenu lessonPage={lessonPage} setLessonPage={setLessonPage} lessonDetailsPage={lessonDetailsPage} setLessonDetailsPage={setLessonDetailsPage} />
             }
