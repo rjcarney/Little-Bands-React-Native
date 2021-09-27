@@ -4,6 +4,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { Feather } from '@expo/vector-icons';
 import LessonScreen from '../../screens/lesson';
 import ProfileScreen from '../../screens/profile';
+import FreePlayScreen from '../../screens/freeplay';
 
 const Tab = createMaterialBottomTabNavigator()
 
@@ -28,7 +29,7 @@ export default function HomeScreen() {
             />
             <Tab.Screen
                 name="free play"
-                component={EmptyScreen}
+                component={FreePlayScreen}
                 options={{
                     tabBarIcon: ({color}) => (
                         <Feather name="play" size={24} color={color} />
