@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
         color: 'darkslategray',
         textAlign: 'center'
     },
+    detailName: {
+        fontWeight: 'bold',
+    },
 });
 
 export default styles;

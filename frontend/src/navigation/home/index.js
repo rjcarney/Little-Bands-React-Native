@@ -13,6 +13,7 @@ const EmptyScreen = () => {
 }
 
 export default function HomeScreen() {
+
     return (
         <Tab.Navigator
             barStyle={{ backgroundColor: 'black' }}

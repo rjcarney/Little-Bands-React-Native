@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
-        marginBottom: 10
+        marginBottom: 5
     },
     albumArt: {
         backgroundColor: 'lightgray',
@@ -34,9 +34,15 @@ const styles = StyleSheet.create({
     lessonInfoText: {
         marginLeft: 10
     },
-    buttonRow: {
+    recordingHeaderRow : {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 20
+    },
+    buttonRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         marginBottom: 10
     },
@@ -48,15 +54,23 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50
     },
+    bigBtn: {
+        height: 75,
+        width: 75
+    },
+    bigBtnImage: {
+        height: 75,
+        width: 75
+    },
     recordingContainer: {
 
     },
     recordingHeaderText: {
         fontWeight: 'bold',
         fontSize: 25,
-        marginBottom: 10,
         color: 'darkslategray',
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingLeft: 55
     },
 });
 

@@ -32,6 +32,75 @@ export default function LessonDetails({ lesson, setLesson }) {
                     </View>
                 </View>
 
+                {instrument != '' ?
+                    <View style={styles.recordingContainer}>
+                        <View style={styles.recordingHeaderRow}>
+                            <View></View>
+                            <Text style={styles.recordingHeaderText}>{instrument}</Text>
+                            <TouchableOpacity style={styles.instrumentBtn}
+                                onPress={() => setInstrument('')}
+                            >
+                                <Image
+                                    style={styles.instrumentBtnImage} 
+                                    source={require('./assets/delete.png')}
+                                ></Image>
+                            </TouchableOpacity>
+                        </View>
+                        
+                        <View style={styles.buttonRow}>
+                        <TouchableOpacity style={styles.bigBtn}>
+                        <Image
+                            style={styles.bigBtnImage} 
+                            source={require('./assets/video.png')}
+                        ></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bigBtn}>
+                        <Image
+                            style={styles.bigBtnImage} 
+                            source={require('./assets/sheetmusic.png')}
+                        ></Image>
+                        </TouchableOpacity>
+                        </View>
+                        <View style={styles.buttonRow}>
+                        <TouchableOpacity style={styles.instrumentBtn}>
+                        <Image
+                            style={styles.instrumentBtnImage} 
+                            source={require('./assets/metronome.png')}
+                        ></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.instrumentBtn}>
+                            <Text>playback speed</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.instrumentBtn}>
+                            <Text>combine audio</Text>
+                        </TouchableOpacity>
+                        </View>
+
+                        <View style={styles.buttonRow}>
+                        <TouchableOpacity style={styles.bigBtn}>
+                        <Image
+                            style={styles.bigBtnImage} 
+                            source={require('./assets/play.png')}
+                        ></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bigBtn}>
+                        <Image
+                            style={styles.bigBtnImage} 
+                            source={require('./assets/record.png')}
+                        ></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bigBtn}>
+                        <Image
+                            style={styles.bigBtnImage} 
+                            source={require('./assets/undo.png')}
+                        ></Image>
+                        </TouchableOpacity>
+                        </View>
+                    </View>
+                    :
+                    null
+                }
+
                 <View style={styles.buttonRow}>
                     <TouchableOpacity style={styles.instrumentBtn}
                         onPress={() => {instrument == '' ?
@@ -92,75 +161,9 @@ export default function LessonDetails({ lesson, setLesson }) {
                             style={styles.instrumentBtnImage} 
                             source={require('./assets/microphone.png')}
                         ></Image>
-                    </TouchableOpacity>
-                    {instrument != '' ?
-                        <TouchableOpacity style={styles.instrumentBtn}
-                                onPress={() => setInstrument('')}
-                        >
-                            <Image
-                            style={styles.instrumentBtnImage} 
-                            source={require('./assets/delete.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        :
-                        null
-                    }    
+                    </TouchableOpacity>       
                 </View>
-
-                {instrument != '' ?
-                    <View style={styles.recordingContainer}>
-                        <Text style={styles.recordingHeaderText}>{instrument}</Text>
-                        <View style={styles.buttonRow}>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                        <Image
-                            style={styles.instrumentBtnImage} 
-                            source={require('./assets/video.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                        <Image
-                            style={styles.instrumentBtnImage} 
-                            source={require('./assets/sheetmusic.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                        <Image
-                            style={styles.instrumentBtnImage} 
-                            source={require('./assets/metronome.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>playback speed</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                            <Text>combine audio</Text>
-                        </TouchableOpacity>
-                        </View>
-
-                        <View style={styles.buttonRow}>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                        <Image
-                            style={styles.instrumentBtnImage} 
-                            source={require('./assets/play.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                        <Image
-                            style={styles.instrumentBtnImage} 
-                            source={require('./assets/record.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.instrumentBtn}>
-                        <Image
-                            style={styles.instrumentBtnImage} 
-                            source={require('./assets/undo.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        </View>
-                    </View>
-                    :
-                    null
-                }
+                
             </View>
         </View>
     )

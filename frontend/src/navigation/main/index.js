@@ -16,7 +16,6 @@ export default function Route() {
     useEffect(() => {
         dispatch(userAuthStateListener())
     }, [])
-    console.log(currentUserObj)
 
     if(!currentUserObj.loaded){
         return (<View></View>)
@@ -25,12 +24,17 @@ export default function Route() {
         <NavigationContainer>
             <Stack.Navigator>
                 {currentUserObj.currentUser == null ?
-                    <Stack.Screen name="auth" component={AuthScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="auth"
+                        component={AuthScreen}
+                        options={{headerShown: false}}
+                    />
                     :
-                    <Stack.Screen name="home" component={HomeScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="home"
+                        component={HomeScreen}
+                        options={{headerShown: false}}
+                    />
                 }
             </Stack.Navigator>
-            
         </NavigationContainer>
     )
 }
