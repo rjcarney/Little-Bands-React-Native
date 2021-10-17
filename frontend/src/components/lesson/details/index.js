@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal } from 'react-native';
 import styles from './styles';
 import { Feather } from '@expo/vector-icons';
+import SheetMusicModal from '../sheetmusic';
+import VideoModal from '../video';
+import RecordModal from '../record';
 
 export default function LessonDetails({ lesson, setLesson }) {
     const [instrument, setInstrument] = useState('');
+    const [videoModal, setVideoModal] = useState(false)
+    const [sheetMusicModal, setSheetMusicModal] = useState(false)
+    const [recordModal, setRecordModal] = useState(false)
 
     return (
         <View style={styles.container}>
@@ -21,6 +27,10 @@ export default function LessonDetails({ lesson, setLesson }) {
             </TouchableOpacity>
 
             <View style={styles.lessonContainer}>
+                <VideoModal open={videoModal} setOpen={setVideoModal} title={lesson.title} />
+                <SheetMusicModal open={sheetMusicModal} setOpen={setSheetMusicModal} title={lesson.title} />
+                <RecordModal open={recordModal} setOpen={setRecordModal} title={lesson.title} />
+
                 <Text style={styles.headerText}>{lesson.title}</Text>
                 <View style={styles.lessonInfo}>
                     <View style={styles.albumArt}>
@@ -42,22 +52,29 @@ export default function LessonDetails({ lesson, setLesson }) {
                             >
                                 <Image
                                     style={styles.instrumentBtnImage} 
-                                    source={require('./assets/delete.png')}
+                                    source={require('../../../../assets/buttons/delete.png')}
                                 ></Image>
                             </TouchableOpacity>
                         </View>
                         
                         <View style={styles.buttonRow}>
-                        <TouchableOpacity style={styles.bigBtn}>
+                        <TouchableOpacity style={styles.bigBtn}
+                            onPress={() => {
+                                setVideoModal(true)
+                            }}
+                        >
                         <Image
                             style={styles.bigBtnImage} 
-                            source={require('./assets/video.png')}
+                            source={require('../../../../assets/buttons/video.png')}
                         ></Image>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.bigBtn}>
+                        <TouchableOpacity style={styles.bigBtn}
+                            onPress={() => {
+                                setSheetMusicModal(true)
+                            }}>
                         <Image
                             style={styles.bigBtnImage} 
-                            source={require('./assets/sheetmusic.png')}
+                            source={require('../../../../assets/buttons/sheetmusic.png')}
                         ></Image>
                         </TouchableOpacity>
                         </View>
@@ -65,7 +82,7 @@ export default function LessonDetails({ lesson, setLesson }) {
                         <TouchableOpacity style={styles.instrumentBtn}>
                         <Image
                             style={styles.instrumentBtnImage} 
-                            source={require('./assets/metronome.png')}
+                            source={require('../../../../assets/buttons/metronome.png')}
                         ></Image>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.instrumentBtn}>
@@ -80,19 +97,23 @@ export default function LessonDetails({ lesson, setLesson }) {
                         <TouchableOpacity style={styles.bigBtn}>
                         <Image
                             style={styles.bigBtnImage} 
-                            source={require('./assets/play.png')}
+                            source={require('../../../../assets/buttons/play.png')}
+                        ></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bigBtn}
+                            onPress={() => {
+                                setRecordModal(true)
+                            }}
+                        >
+                        <Image
+                            style={styles.bigBtnImage} 
+                            source={require('../../../../assets/buttons/record.png')}
                         ></Image>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.bigBtn}>
                         <Image
                             style={styles.bigBtnImage} 
-                            source={require('./assets/record.png')}
-                        ></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.bigBtn}>
-                        <Image
-                            style={styles.bigBtnImage} 
-                            source={require('./assets/undo.png')}
+                            source={require('../../../../assets/buttons/undo.png')}
                         ></Image>
                         </TouchableOpacity>
                         </View>
@@ -111,7 +132,7 @@ export default function LessonDetails({ lesson, setLesson }) {
                     >
                         <Image
                             style={styles.instrumentBtnImage} 
-                            source={require('./assets/guitar.png')}
+                            source={require('../../../../assets/buttons/guitar.png')}
                         ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
@@ -123,7 +144,7 @@ export default function LessonDetails({ lesson, setLesson }) {
                     >
                         <Image
                             style={styles.instrumentBtnImage} 
-                            source={require('./assets/bass.png')}
+                            source={require('../../../../assets/buttons/bass.png')}
                         ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
@@ -135,7 +156,7 @@ export default function LessonDetails({ lesson, setLesson }) {
                     >
                         <Image
                             style={styles.instrumentBtnImage} 
-                            source={require('./assets/keyboard.png')}
+                            source={require('../../../../assets/buttons/keyboard.png')}
                         ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
@@ -147,7 +168,7 @@ export default function LessonDetails({ lesson, setLesson }) {
                     >
                         <Image
                             style={styles.instrumentBtnImage} 
-                            source={require('./assets/drums.png')}
+                            source={require('../../../../assets/buttons/drums.png')}
                         ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.instrumentBtn}
@@ -159,7 +180,7 @@ export default function LessonDetails({ lesson, setLesson }) {
                     >
                         <Image
                             style={styles.instrumentBtnImage} 
-                            source={require('./assets/microphone.png')}
+                            source={require('../../../../assets/buttons/microphone.png')}
                         ></Image>
                     </TouchableOpacity>       
                 </View>
